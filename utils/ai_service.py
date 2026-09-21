@@ -1,7 +1,7 @@
 """Gemini calls kept separate from the Streamlit user interface."""
 
 from __future__ import annotations
-
+import logging
 import os
 
 
@@ -112,8 +112,10 @@ STUDY MATERIAL:
                 response_mime_type="application/json", temperature=0.2
             ),
         )
+       
         return _response_text(response)
     except AIServiceError:
         raise
     except Exception as error:
+        logging.exception("Gemini quiz generation failed")
         raise _friendly_api_error(error) from error
