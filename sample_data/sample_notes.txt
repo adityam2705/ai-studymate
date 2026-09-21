@@ -1,0 +1,16 @@
+Operating Systems: Process Management
+
+An operating system manages computer hardware and provides services to programs. A
+process is a program that is currently being executed. Each process has its own state
+and information, stored in a Process Control Block (PCB). The PCB contains the process
+state, program counter, CPU registers, and scheduling information.
+
+A process normally moves through these states: New, Ready, Running, Waiting, and
+Terminated. A process in the Ready state is prepared to use the CPU. The CPU scheduler
+selects one ready process to run. A Running process may move to Waiting when it needs
+input/output, such as reading a file. It returns to Ready when the event is complete.
+
+The operating system can switch the CPU from one process to another. This is called a
+context switch. The system saves the current process state and restores the next process
+state. Context switches support multitasking, but they create overhead because useful
+program work pauses while the switch is performed.

@@ -1,0 +1,13 @@
+# Secrets and local settings
+.env
+.streamlit/secrets.toml
+
+# Python files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Streamlit files
+.streamlit/config.toml
