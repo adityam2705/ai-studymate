@@ -53,7 +53,7 @@ def _client():
 
 
 def _model_name() -> str:
-    return os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+    return os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
 
 
 def _response_text(response) -> str:
