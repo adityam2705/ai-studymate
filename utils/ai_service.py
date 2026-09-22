@@ -68,8 +68,15 @@ def _response_text(response) -> str:
     return text.strip()
 
 
+    
 def _friendly_api_error(error: Exception) -> AIServiceError:
     message = str(error).lower()
+
+    if "503" in message or "unavailable" in message:
+        return AIServiceError(
+            "Gemini is temporarily busy. Please wait a few minutes "
+            "and try generating again."
+        )
 
     if any(word in message for word in (
         "api key", "401", "403", "permission"
